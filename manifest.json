@@ -1,0 +1,13 @@
+{
+  "name": "DTCG Import for Figma",
+  "id": "0000000000000000000",
+  "api": "1.0.0",
+  "main": "dist/code.js",
+  "ui": "dist/ui.html",
+  "editorType": ["figma"],
+  "documentAccess": "dynamic-page",
+  "networkAccess": {
+    "allowedDomains": ["https://api.github.com"],
+    "reasoning": "The plugin reads design token files from the GitHub repository the user enters, through GitHub's REST API, with read-only GET requests. It sends nothing else anywhere."
+  }
+}

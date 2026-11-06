@@ -1,0 +1,130 @@
+{
+  "version": "2025.10",
+  "name": "Example DS",
+  "sets": {
+    "foundation": {
+      "sources": [
+        {
+          "$ref": "color.tokens.json"
+        },
+        {
+          "$ref": "dimension.tokens.json"
+        },
+        {
+          "$ref": "typography.tokens.json"
+        },
+        {
+          "$ref": "effects.tokens.json"
+        }
+      ]
+    }
+  },
+  "modifiers": {
+    "brand": {
+      "default": "standard",
+      "contexts": {
+        "standard": [],
+        "premium": [
+          {
+            "$ref": "modes/brand.premium.tokens.json"
+          }
+        ]
+      }
+    },
+    "mode": {
+      "default": "light",
+      "contexts": {
+        "light": [
+          {
+            "$ref": "modes/mode.light.tokens.json"
+          }
+        ],
+        "dark": [
+          {
+            "$ref": "modes/mode.dark.tokens.json"
+          }
+        ]
+      }
+    },
+    "viewport": {
+      "default": "compact",
+      "contexts": {
+        "compact": [
+          {
+            "$ref": "modes/viewport.compact.tokens.json"
+          }
+        ],
+        "medium": [
+          {
+            "$ref": "modes/viewport.medium.tokens.json"
+          }
+        ],
+        "expanded": [
+          {
+            "$ref": "modes/viewport.expanded.tokens.json"
+          }
+        ]
+      },
+      "$extensions": {
+        "com.example": {
+          "minWidth": {
+            "compact": {
+              "value": 0,
+              "unit": "px"
+            },
+            "medium": {
+              "value": 600,
+              "unit": "px"
+            },
+            "expanded": {
+              "value": 1024,
+              "unit": "px"
+            }
+          }
+        }
+      }
+    },
+    "motion": {
+      "default": "full",
+      "contexts": {
+        "full": [
+          {
+            "$ref": "modes/motion.full.tokens.json"
+          }
+        ],
+        "reduced": [
+          {
+            "$ref": "modes/motion.reduced.tokens.json"
+          }
+        ]
+      }
+    },
+    "density": {
+      "default": "regular",
+      "contexts": {
+        "regular": [],
+        "compact": []
+      }
+    }
+  },
+  "resolutionOrder": [
+    {
+      "$ref": "#/sets/foundation"
+    },
+    {
+      "$ref": "#/modifiers/brand"
+    },
+    {
+      "$ref": "#/modifiers/mode"
+    },
+    {
+      "$ref": "#/modifiers/viewport"
+    },
+    {
+      "$ref": "#/modifiers/motion"
+    },
+    {
+      "$ref": "#/modifiers/density"
+    }
+  ]
+}

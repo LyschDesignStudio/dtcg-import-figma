@@ -1,0 +1,22 @@
+{
+  "tone": {
+    "neutral": {
+      "0": {
+        "value": "{color.solid.neutral.0}",
+        "type": "color"
+      },
+      "100": {
+        "value": "{color.solid.neutral.100}",
+        "type": "color"
+      },
+      "500": {
+        "value": "{color.solid.neutral.500}",
+        "type": "color"
+      },
+      "900": {
+        "value": "{color.solid.neutral.900}",
+        "type": "color"
+      }
+    }
+  }
+}

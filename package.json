@@ -1,0 +1,31 @@
+{
+  "name": "dtcg-import-figma",
+  "version": "1.0.0",
+  "description": "A Figma plugin that imports DTCG design tokens from a GitHub repository into Figma variables and styles.",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "build": "vite build -c vite.main.config.ts && vite build && node scripts/inline-ui.mjs",
+    "dev": "vite build -c vite.main.config.ts --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "preview": "vite -c vite.preview.config.ts --port 5174"
+  },
+  "dependencies": {
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@figma/plugin-typings": "^1.139.0",
+    "@testing-library/react": "^16.3.3",
+    "@types/node": "^22.20.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "jsdom": "^31.0.0",
+    "typescript": "^6.0.3",
+    "vite": "^8.3.0",
+    "vitest": "^5.0.1"
+  }
+}

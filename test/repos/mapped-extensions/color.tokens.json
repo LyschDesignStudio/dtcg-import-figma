@@ -1,0 +1,222 @@
+{
+  "color": {
+    "solid": {
+      "neutral": {
+        "0": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "hex": "#ffffff"
+          }
+        },
+        "100": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.949,
+              0.949,
+              0.9569
+            ],
+            "hex": "#f2f2f4"
+          }
+        },
+        "500": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.4784,
+              0.4784,
+              0.5216
+            ],
+            "hex": "#7a7a85"
+          }
+        },
+        "900": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1137,
+              0.1137,
+              0.1333
+            ],
+            "hex": "#1d1d22"
+          }
+        },
+        "1000": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "hex": "#000000"
+          }
+        }
+      },
+      "blue": {
+        "500": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1843,
+              0.4196,
+              1
+            ],
+            "hex": "#2f6bff"
+          }
+        },
+        "700": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1216,
+              0.2784,
+              0.702
+            ],
+            "hex": "#1f47b3"
+          }
+        }
+      },
+      "violet": {
+        "500": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.62,
+              0.3,
+              300
+            ]
+          }
+        }
+      },
+      "green": {
+        "500": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "hsl",
+            "components": [
+              140,
+              60,
+              40
+            ]
+          }
+        }
+      },
+      "amber": {
+        "500": {
+          "$type": "color",
+          "$value": "#f5a524"
+        }
+      }
+    },
+    "alpha": {
+      "black": {
+        "10": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0.1,
+            "hex": "#000000"
+          }
+        },
+        "40": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0.4,
+            "hex": "#000000"
+          }
+        }
+      }
+    },
+    "accent": {
+      "$root": {
+        "$type": "color",
+        "$value": "{color.solid.blue.500}"
+      },
+      "subtle": {
+        "$type": "color",
+        "$value": "{color.solid.blue.700}"
+      }
+    }
+  },
+  "content": {
+    "primary": {
+      "$type": "color",
+      "$value": "{tone.neutral.900}",
+      "$description": "Body text."
+    },
+    "secondary": {
+      "$type": "color",
+      "$value": "{tone.neutral.500}"
+    },
+    "brand": {
+      "$type": "color",
+      "$value": "{color.solid.blue.500}",
+      "$extensions": {
+        "com.example": {
+          "note": "the brand's ink"
+        },
+        "com.example.modes": {
+          "brand": {
+            "premium": "{color.solid.violet.500}"
+          }
+        }
+      }
+    },
+    "legacy": {
+      "$type": "color",
+      "$value": "{tone.neutral.500}",
+      "$deprecated": "Use content.secondary."
+    }
+  },
+  "bg": {
+    "surface": {
+      "$type": "color",
+      "$value": "{tone.neutral.0}"
+    },
+    "overlay": {
+      "$type": "color",
+      "$value": "{color.alpha.black.10}",
+      "$extensions": {
+        "com.example.modes": {
+          "brand": {
+            "premium": "{color.solid.blue.700}"
+          },
+          "mode": {
+            "dark": "{color.alpha.black.40}"
+          }
+        }
+      }
+    }
+  },
+  "border": {
+    "default": {
+      "$type": "color",
+      "$value": "{tone.neutral.100}"
+    }
+  }
+}

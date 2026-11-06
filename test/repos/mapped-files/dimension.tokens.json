@@ -1,0 +1,60 @@
+{
+  "spacing": {
+    "100": {
+      "$type": "dimension",
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      }
+    },
+    "200": {
+      "$type": "dimension",
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      }
+    },
+    "400": {
+      "$type": "dimension",
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      }
+    },
+    "600": {
+      "$type": "dimension",
+      "$value": {
+        "value": 24,
+        "unit": "px"
+      }
+    }
+  },
+  "radius": {
+    "sm": {
+      "$type": "dimension",
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      }
+    },
+    "full": {
+      "$type": "dimension",
+      "$value": {
+        "value": 9999,
+        "unit": "px"
+      }
+    }
+  },
+  "shape": {
+    "control": {
+      "$type": "dimension",
+      "$value": "{radius.full}"
+    }
+  },
+  "opacity": {
+    "disabled": {
+      "$type": "opacity",
+      "$value": 0.4
+    }
+  }
+}

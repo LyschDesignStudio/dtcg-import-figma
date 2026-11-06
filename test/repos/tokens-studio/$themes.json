@@ -1,0 +1,153 @@
+[
+  {
+    "id": "brand-standard",
+    "name": "standard",
+    "group": "brand",
+    "selectedTokenSets": {
+      "core/color": "enabled",
+      "core/dimension": "enabled",
+      "core/typography": "enabled",
+      "core/effects": "enabled",
+      "global/palette-source": "source",
+      "drafts/unused": "disabled"
+    }
+  },
+  {
+    "id": "brand-premium",
+    "name": "premium",
+    "group": "brand",
+    "selectedTokenSets": {
+      "core/color": "enabled",
+      "core/dimension": "enabled",
+      "core/typography": "enabled",
+      "core/effects": "enabled",
+      "global/palette-source": "source",
+      "drafts/unused": "disabled",
+      "brand/premium": "enabled"
+    }
+  },
+  {
+    "id": "mode-light",
+    "name": "light",
+    "group": "mode",
+    "selectedTokenSets": {
+      "core/color": "enabled",
+      "core/dimension": "enabled",
+      "core/typography": "enabled",
+      "core/effects": "enabled",
+      "global/palette-source": "source",
+      "drafts/unused": "disabled",
+      "mode/light": "enabled"
+    }
+  },
+  {
+    "id": "mode-dark",
+    "name": "dark",
+    "group": "mode",
+    "selectedTokenSets": {
+      "core/color": "enabled",
+      "core/dimension": "enabled",
+      "core/typography": "enabled",
+      "core/effects": "enabled",
+      "global/palette-source": "source",
+      "drafts/unused": "disabled",
+      "mode/dark": "enabled"
+    }
+  },
+  {
+    "id": "viewport-compact",
+    "name": "compact",
+    "group": "viewport",
+    "selectedTokenSets": {
+      "core/color": "enabled",
+      "core/dimension": "enabled",
+      "core/typography": "enabled",
+      "core/effects": "enabled",
+      "global/palette-source": "source",
+      "drafts/unused": "disabled",
+      "viewport/compact": "enabled"
+    }
+  },
+  {
+    "id": "viewport-medium",
+    "name": "medium",
+    "group": "viewport",
+    "selectedTokenSets": {
+      "core/color": "enabled",
+      "core/dimension": "enabled",
+      "core/typography": "enabled",
+      "core/effects": "enabled",
+      "global/palette-source": "source",
+      "drafts/unused": "disabled",
+      "viewport/medium": "enabled"
+    }
+  },
+  {
+    "id": "viewport-expanded",
+    "name": "expanded",
+    "group": "viewport",
+    "selectedTokenSets": {
+      "core/color": "enabled",
+      "core/dimension": "enabled",
+      "core/typography": "enabled",
+      "core/effects": "enabled",
+      "global/palette-source": "source",
+      "drafts/unused": "disabled",
+      "viewport/expanded": "enabled"
+    }
+  },
+  {
+    "id": "motion-full",
+    "name": "full",
+    "group": "motion",
+    "selectedTokenSets": {
+      "core/color": "enabled",
+      "core/dimension": "enabled",
+      "core/typography": "enabled",
+      "core/effects": "enabled",
+      "global/palette-source": "source",
+      "drafts/unused": "disabled",
+      "motion/full": "enabled"
+    }
+  },
+  {
+    "id": "motion-reduced",
+    "name": "reduced",
+    "group": "motion",
+    "selectedTokenSets": {
+      "core/color": "enabled",
+      "core/dimension": "enabled",
+      "core/typography": "enabled",
+      "core/effects": "enabled",
+      "global/palette-source": "source",
+      "drafts/unused": "disabled",
+      "motion/reduced": "enabled"
+    }
+  },
+  {
+    "id": "density-regular",
+    "name": "regular",
+    "group": "density",
+    "selectedTokenSets": {
+      "core/color": "enabled",
+      "core/dimension": "enabled",
+      "core/typography": "enabled",
+      "core/effects": "enabled",
+      "global/palette-source": "source",
+      "drafts/unused": "disabled"
+    }
+  },
+  {
+    "id": "density-compact",
+    "name": "compact",
+    "group": "density",
+    "selectedTokenSets": {
+      "core/color": "enabled",
+      "core/dimension": "enabled",
+      "core/typography": "enabled",
+      "core/effects": "enabled",
+      "global/palette-source": "source",
+      "drafts/unused": "disabled"
+    }
+  }
+]

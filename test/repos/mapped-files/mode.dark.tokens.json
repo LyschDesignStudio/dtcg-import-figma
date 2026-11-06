@@ -1,0 +1,28 @@
+{
+  "tone": {
+    "neutral": {
+      "0": {
+        "$type": "color",
+        "$value": "{color.solid.neutral.1000}"
+      },
+      "100": {
+        "$type": "color",
+        "$value": "{color.solid.neutral.900}"
+      },
+      "500": {
+        "$type": "color",
+        "$value": "{color.solid.neutral.500}"
+      },
+      "900": {
+        "$type": "color",
+        "$value": "{color.solid.neutral.100}"
+      }
+    }
+  },
+  "bg": {
+    "overlay": {
+      "$type": "color",
+      "$value": "{color.alpha.black.40}"
+    }
+  }
+}

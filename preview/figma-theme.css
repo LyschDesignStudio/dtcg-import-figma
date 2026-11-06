@@ -1,0 +1,57 @@
+/* The values Figma gives a plugin when it opens it with themeColors: true
+   (approximations of the documented tokens, for looking at the panel in a
+   browser). `?theme=dark` sets data-theme="dark". */
+:root {
+  --figma-color-bg: #ffffff;
+  --figma-color-bg-secondary: #f5f5f5;
+  --figma-color-bg-tertiary: #e6e6e6;
+  --figma-color-bg-hover: rgba(0, 0, 0, 0.06);
+  --figma-color-bg-brand: #0d99ff;
+  --figma-color-bg-brand-hover: #0a85e0;
+  --figma-color-bg-brand-tertiary: #e5f4ff;
+  --figma-color-bg-danger: #f24822;
+  --figma-color-bg-danger-tertiary: #ffe7e1;
+  --figma-color-bg-warning: #ffcd29;
+  --figma-color-bg-warning-tertiary: #fff4cf;
+  --figma-color-bg-success: #14ae5c;
+  --figma-color-bg-success-tertiary: #d9f5e5;
+  --figma-color-text: rgba(0, 0, 0, 0.9);
+  --figma-color-text-secondary: rgba(0, 0, 0, 0.5);
+  --figma-color-text-tertiary: rgba(0, 0, 0, 0.3);
+  --figma-color-text-disabled: rgba(0, 0, 0, 0.3);
+  --figma-color-text-onbrand: #ffffff;
+  --figma-color-text-brand: #0d99ff;
+  --figma-color-text-danger: #dc3412;
+  --figma-color-text-warning: #b86200;
+  --figma-color-text-success: #0f8a49;
+  --figma-color-border: rgba(0, 0, 0, 0.1);
+  --figma-color-border-strong: rgba(0, 0, 0, 0.2);
+  --figma-color-border-selected: #0d99ff;
+}
+html[data-theme="dark"] {
+  --figma-color-bg: #2c2c2c;
+  --figma-color-bg-secondary: #383838;
+  --figma-color-bg-tertiary: #444444;
+  --figma-color-bg-hover: rgba(255, 255, 255, 0.08);
+  --figma-color-bg-brand: #0d99ff;
+  --figma-color-bg-brand-hover: #3aa9ff;
+  --figma-color-bg-brand-tertiary: #0b3a5c;
+  --figma-color-bg-danger: #f24822;
+  --figma-color-bg-danger-tertiary: #4a1d14;
+  --figma-color-bg-warning: #ffcd29;
+  --figma-color-bg-warning-tertiary: #4a3b0a;
+  --figma-color-bg-success: #14ae5c;
+  --figma-color-bg-success-tertiary: #0d3b22;
+  --figma-color-text: #ffffff;
+  --figma-color-text-secondary: rgba(255, 255, 255, 0.7);
+  --figma-color-text-tertiary: rgba(255, 255, 255, 0.4);
+  --figma-color-text-disabled: rgba(255, 255, 255, 0.3);
+  --figma-color-text-onbrand: #ffffff;
+  --figma-color-text-brand: #4cc2ff;
+  --figma-color-text-danger: #ff8577;
+  --figma-color-text-warning: #ffc470;
+  --figma-color-text-success: #4ad78a;
+  --figma-color-border: rgba(255, 255, 255, 0.1);
+  --figma-color-border-strong: rgba(255, 255, 255, 0.25);
+  --figma-color-border-selected: #0d99ff;
+}

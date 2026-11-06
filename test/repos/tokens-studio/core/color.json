@@ -1,0 +1,116 @@
+{
+  "color": {
+    "solid": {
+      "neutral": {
+        "0": {
+          "value": "#ffffff",
+          "type": "color"
+        },
+        "100": {
+          "value": "#f2f2f4",
+          "type": "color"
+        },
+        "500": {
+          "value": "#7a7a85",
+          "type": "color"
+        },
+        "900": {
+          "value": "#1d1d22",
+          "type": "color"
+        },
+        "1000": {
+          "value": "#000000",
+          "type": "color"
+        }
+      },
+      "blue": {
+        "500": {
+          "value": "#2f6bff",
+          "type": "color"
+        },
+        "700": {
+          "value": "#1f47b3",
+          "type": "color"
+        }
+      },
+      "violet": {
+        "500": {
+          "value": "#a832ff",
+          "type": "color"
+        }
+      },
+      "green": {
+        "500": {
+          "value": "#29a352",
+          "type": "color"
+        }
+      },
+      "amber": {
+        "500": {
+          "value": "#f5a524",
+          "type": "color"
+        }
+      }
+    },
+    "alpha": {
+      "black": {
+        "10": {
+          "value": "#0000001a",
+          "type": "color"
+        },
+        "40": {
+          "value": "#00000066",
+          "type": "color"
+        }
+      }
+    }
+  },
+  "content": {
+    "primary": {
+      "value": "{tone.neutral.900}",
+      "type": "color",
+      "description": "Body text."
+    },
+    "secondary": {
+      "value": "{tone.neutral.500}",
+      "type": "color"
+    },
+    "brand": {
+      "value": "{color.solid.blue.500}",
+      "type": "color"
+    },
+    "legacy": {
+      "value": "{tone.neutral.500}",
+      "type": "color"
+    },
+    "hover": {
+      "value": "{color.solid.blue.500}",
+      "type": "color",
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "0.1",
+            "space": "lch"
+          }
+        }
+      }
+    }
+  },
+  "bg": {
+    "surface": {
+      "value": "{tone.neutral.0}",
+      "type": "color"
+    },
+    "overlay": {
+      "value": "{color.alpha.black.10}",
+      "type": "color"
+    }
+  },
+  "border": {
+    "default": {
+      "value": "{tone.neutral.100}",
+      "type": "color"
+    }
+  }
+}

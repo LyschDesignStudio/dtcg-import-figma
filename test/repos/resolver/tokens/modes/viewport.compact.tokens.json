@@ -1,0 +1,12 @@
+{
+  "layout": {
+    "margin": {
+      "$type": "dimension",
+      "$value": "{spacing.200}"
+    },
+    "columns": {
+      "$type": "number",
+      "$value": 4
+    }
+  }
+}

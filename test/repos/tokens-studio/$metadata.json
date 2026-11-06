@@ -1,0 +1,18 @@
+{
+  "tokenSetOrder": [
+    "core/color",
+    "core/dimension",
+    "core/typography",
+    "core/effects",
+    "mode/light",
+    "mode/dark",
+    "brand/premium",
+    "viewport/compact",
+    "viewport/medium",
+    "viewport/expanded",
+    "motion/full",
+    "motion/reduced",
+    "global/palette-source",
+    "drafts/unused"
+  ]
+}

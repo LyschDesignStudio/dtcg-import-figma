@@ -1,0 +1,12 @@
+/* The few looks only the GitHub connection and the panel use. */
+
+/* Change configuration: the connect form's look, for the same repository. */
+.configure { gap: var(--s3); padding: var(--s4); }
+.configure .lead { display: flex; flex-direction: column; gap: var(--s1); }
+.configure .lead h2 { font-size: 13px; line-height: 20px; }
+
+/* While the panel checks the repository, before the first state. */
+.loading-state { padding: var(--s4); align-items: center; }
+.loading-state .working { justify-content: center; }
+
+.callout .working { margin-top: var(--s1); }

@@ -1,0 +1,14 @@
+{
+  "content": {
+    "brand": {
+      "value": "{color.solid.violet.500}",
+      "type": "color"
+    }
+  },
+  "bg": {
+    "overlay": {
+      "value": "{color.solid.blue.700}",
+      "type": "color"
+    }
+  }
+}

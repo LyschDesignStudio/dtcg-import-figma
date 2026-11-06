@@ -1,0 +1,22 @@
+{
+  "tone": {
+    "neutral": {
+      "0": {
+        "$type": "color",
+        "$value": "{color.solid.neutral.0}"
+      },
+      "100": {
+        "$type": "color",
+        "$value": "{color.solid.neutral.100}"
+      },
+      "500": {
+        "$type": "color",
+        "$value": "{color.solid.neutral.500}"
+      },
+      "900": {
+        "$type": "color",
+        "$value": "{color.solid.neutral.900}"
+      }
+    }
+  }
+}
