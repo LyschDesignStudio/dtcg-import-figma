@@ -4,6 +4,17 @@ A Figma plugin that imports design tokens in the [DTCG format](https://www.desig
 
 It only reads. It never writes to the repository: every request it makes is a `GET` to `api.github.com`.
 
+## Load it in Figma
+
+The built plugin is included in this repository (`dist/`), so there is nothing to install or build.
+
+1. Download this repository: on GitHub, *Code → Download ZIP*, then unzip it.
+2. Open the Figma desktop app (plugins in development can't be loaded in the browser) and open a design file.
+3. *Plugins → Development → Import plugin from manifest…*, and choose `manifest.json` in the unzipped folder.
+4. Run it from *Plugins → Development → DTCG Import for Figma*.
+
+Keep the folder where it is: Figma loads the plugin from it each time it runs.
+
 ## What it does
 
 1. **Connect** a GitHub repository: `owner/name` or its `github.com` address. Optionally, a folder and a branch (the default branch otherwise). The plugin finds the folder that holds the tokens and which layout it uses. When there are several, it asks which one.
@@ -36,25 +47,20 @@ The token is kept in Figma's client storage, on your computer only, one per repo
 
 Without a token, GitHub allows 60 requests an hour per IP address, and each token file is one request. For a large repository, any token (even one with no access to private repositories) raises the limit to 5,000.
 
-## Build and load it in Figma
+## Build from source (optional)
 
-Requirements: Node.js 20.11 or later, and the Figma desktop app.
+Only needed to change the plugin. Requirements: Node.js 20.11 or later.
 
 ```bash
 npm install
-npm run build
+npm run build       # writes dist/code.js and dist/ui.html
 ```
 
-This writes `dist/code.js` and `dist/ui.html`. Then, in the Figma desktop app:
-
-1. Open a design file.
-2. *Plugins → Development → Import plugin from manifest…*
-3. Choose `manifest.json` in this folder.
-4. Run it from *Plugins → Development → DTCG Import for Figma*.
+`dist/` is committed so the plugin can be loaded straight from a download. After any change to the source, run `npm run build` and commit the updated `dist/` with it.
 
 The `id` in `manifest.json` is a placeholder. To publish the plugin to the Figma Community, create a new plugin in Figma and replace the `id` with the one it gives you.
 
-## Development
+### Development
 
 ```bash
 npm run typecheck   # TypeScript
@@ -67,7 +73,7 @@ The preview runs the real panel over a fake Figma document and a fake GitHub. Sc
 
 The test fixtures in `test/repos/` are one made-up design system written in each of the four layouts, so the tests can prove they produce the same result. `node scripts/fixtures.mjs` writes them again.
 
-### Layout of the source
+#### Layout of the source
 
 - `src/main.ts`: the Figma sandbox. It has no network access; it applies the plan the UI sends.
 - `src/handlers.ts`, `src/shared/protocol.ts`: the methods the UI calls in the sandbox.
