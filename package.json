@@ -1,6 +1,6 @@
 {
   "name": "dtcg-import-figma",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Figma plugin that imports DTCG design tokens from a GitHub repository into Figma variables and styles.",
   "private": true,
   "type": "module",

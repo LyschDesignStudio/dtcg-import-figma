@@ -239,7 +239,7 @@ describe("dtcg report", () => {
     await sync.link(await sync.inspect("trunk"), { format: "mapped", mapping: MAPPINGS["mapped-files"], remBase: 16 }, false);
     const s = await linked();
     const text = report(s);
-    expect(text).toMatch(/DTCG Import for Figma 1\.0\.0/);
+    expect(text).toMatch(/DTCG Import for Figma 1\.0\.1/);
     expect(text).toMatch(/Format: mapped/);
     expect(text).toContain(`Branch: trunk · commit ${s.headSha}`);
     expect(text).toMatch(/Mapping:\n {2}color\.tokens\.json: base/);
