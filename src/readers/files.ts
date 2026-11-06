@@ -2,7 +2,7 @@
    Tokens Studio's themes and metadata, or nothing to read. */
 
 import type { Issue } from "../model";
-import { hasTokens, isObject } from "../tokens";
+import { hasTokens, isObject, parseJsonSafely } from "../tokens";
 
 /** Every .json under the folder, except packages, builds, dot-folders and generated permutations. */
 export function isCandidate(path: string): boolean {
@@ -38,13 +38,15 @@ export function readFolder(texts: Record<string, string>): FolderFiles {
   const out: FolderFiles = { json: {}, broken: {}, tokenFiles: [], resolvers: [], themes: [], issues: [] };
   for (const path of Object.keys(texts).filter(isCandidate).sort()) {
     let json: unknown;
+    const dropped = { count: 0 };
     try {
-      json = JSON.parse(texts[path]);
+      json = parseJsonSafely(texts[path], dropped);
     } catch (e) {
       out.broken[path] = (e as Error).message;
       out.issues.push({ level: "error", file: path, message: `${path} isn't valid JSON (${(e as Error).message}); it was skipped.` });
       continue;
     }
+    if (dropped.count) out.issues.push({ level: "warning", file: path, message: `${path} has keys named __proto__, constructor or prototype; they were ignored.` });
     if (isResolverFile(path)) {
       out.json[path] = json;
       out.resolvers.push(path);

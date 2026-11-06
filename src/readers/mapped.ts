@@ -6,7 +6,7 @@
    the designer confirms it. */
 
 import type { Axis, Issue, Mapping, ReadResult, Source, Tree } from "../model";
-import { isObject } from "../tokens";
+import { isObject, isSafeKey } from "../tokens";
 import type { FolderFiles } from "./files";
 
 /** Context names the plugin knows, and the axis each suggests. */
@@ -65,6 +65,11 @@ export function suggestMapping(files: FolderFiles): Mapping {
   };
   for (const f of files.tokenFiles) {
     const parts = stem(f).toLowerCase().split(/[.\-_]/);
+    /* A name part that can't be an object key (__proto__): no axis is read from it. */
+    if (!parts.every(isSafeKey)) {
+      mapping.files[f] = { kind: "base" };
+      continue;
+    }
     const known = parts.find((p) => KNOWN[p]);
     const rest = parts.slice(1).join("-");
     if (known) {
@@ -153,8 +158,9 @@ export function readMapped(files: FolderFiles, mapping: Mapping): ReadResult {
           const modes = isObject(node.$extensions) ? node.$extensions[key] : undefined;
           if (!isObject(modes)) return;
           for (const [axis, contexts] of Object.entries(modes)) {
-            if (!isObject(contexts)) continue;
+            if (!isObject(contexts) || !isSafeKey(axis)) continue;
             for (const [ctx, value] of Object.entries(contexts)) {
+              if (!isSafeKey(ctx)) continue;
               const k = `${axis}\u0000${ctx}`;
               const tree = byAxisCtx.get(k) ?? {};
               let at = tree;
@@ -165,7 +171,7 @@ export function readMapped(files: FolderFiles, mapping: Mapping): ReadResult {
           }
           return;
         }
-        for (const [k, v] of Object.entries(node)) if (!k.startsWith("$")) walk(v, [...path, k]);
+        for (const [k, v] of Object.entries(node)) if (!k.startsWith("$") && isSafeKey(k)) walk(v, [...path, k]);
       };
       walk(src.tree, []);
       for (const [k, tree] of byAxisCtx) {

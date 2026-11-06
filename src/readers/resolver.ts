@@ -36,7 +36,7 @@ function at(doc: unknown, pointer: string): unknown {
   let node = doc;
   for (const part of pointer.split("/").filter(Boolean).map(decode)) {
     if (Array.isArray(node)) node = node[Number(part)];
-    else if (isObject(node)) node = node[part];
+    else if (isObject(node) && Object.prototype.hasOwnProperty.call(node, part)) node = node[part];
     else return undefined;
   }
   return node;

@@ -19,6 +19,21 @@ export interface RawToken {
 
 export const isObject = (v: unknown): v is Tree => !!v && typeof v === "object" && !Array.isArray(v);
 
+/** Keys that would reach an object's prototype when used to write: never taken from a repository. */
+const UNSAFE_KEYS = new Set(["__proto__", "constructor", "prototype"]);
+export const isSafeKey = (key: string) => !UNSAFE_KEYS.has(key);
+
+/** JSON.parse that drops the keys isSafeKey refuses, at any depth. `dropped` counts them. */
+export function parseJsonSafely(text: string, dropped = { count: 0 }): unknown {
+  return JSON.parse(text, function (key, value) {
+    if (key && !isSafeKey(key)) {
+      dropped.count++;
+      return undefined;
+    }
+    return value;
+  });
+}
+
 function isToken(node: Tree, syntax: Syntax, inheritedType: string | null): boolean {
   if ("$value" in node) return true;
   if (syntax !== "tokens-studio" || !("value" in node)) return false;
@@ -32,7 +47,7 @@ export function flatten(source: Source): RawToken[] {
   const ts = source.syntax === "tokens-studio";
   const walk = (node: Tree, path: string[], type: string | null) => {
     for (const [key, child] of Object.entries(node)) {
-      if (!isObject(child)) continue;
+      if (!isObject(child) || !isSafeKey(key)) continue;
       if (key.startsWith("$") && key !== "$root") continue;
       const childPath = key === "$root" ? path : [...path, key];
       if (isToken(child, source.syntax, type)) {

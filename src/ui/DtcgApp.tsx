@@ -16,6 +16,7 @@ import { DtcgGitHub, type RepoRef } from "../github";
 import type { DtcgLink, Format, Mapping, Plan, SnapValue } from "../model";
 import type { TokenChange } from "../status";
 import { mappingDoubts } from "../readers/mapped";
+import { isSafeKey } from "../tokens";
 import { DtcgSync, report, type Choice, type DtcgLinked, type Inspection } from "../sync";
 import { ConnectGitHub, kindLine, type Connected } from "./ConnectGitHub";
 import { rememberDtcg, tokenOf } from "./keys";
@@ -466,6 +467,7 @@ function Ready({ sync, branch: initialBranch, branchFixed, current, busy, onLink
 
 function RoleRows({ files, mapping, onChange }: { files: string[]; mapping: Mapping; onChange: (m: Mapping) => void }) {
   const set = (file: string, value: Mapping["files"][string]) => {
+    if (value.kind === "context" && (!isSafeKey(value.axis) || !isSafeKey(value.context))) return;
     const next: Mapping = { ...mapping, files: { ...mapping.files, [file]: value }, axes: { ...(mapping.axes ?? {}) } };
     if (value.kind === "context" && value.axis && value.context) {
       const a = next.axes![value.axis] ?? { contexts: [], default: "" };
